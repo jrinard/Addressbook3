@@ -34,6 +34,7 @@ function resetFields() {
 $(document).ready(function() {
   $("#add-address").click(function() {
     $("#new-addresses").append(
+                            '<div class="extra">' +
                               '<div class="new-address">' +
                                 '<div class="form-group">' +
                                   '<label for="address-type">Address Type</label>' +
@@ -51,7 +52,9 @@ $(document).ready(function() {
                                    '<label for="new-state">State</label>' +
                                    '<input type="text" class="form-control new-state">' +
                                  '</div>' +
-                               '</div>');
+                                 '</div>' +
+                               '</div>'
+                             );
   });
   $("form#new-contact").submit(function(event) {
     event.preventDefault();
@@ -87,5 +90,8 @@ $(document).ready(function() {
     });
 
     resetFields();
+    //$("#new-addresses").remove();
+
+    $(".extra").remove();
   });
 });
